@@ -1,10 +1,13 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import Sidenav from './navbar';
+import Sidenav from './NavBar/navbar';
+import style from './header.css';
+
+
 
 const Header = (props) => {
 
-    const navBar = () =>{
+    const navBar = () =>(
         <div className={style.bars}>
             <FontAwesome name="bars"
                 onClick={props.onOpenNav}
@@ -14,7 +17,7 @@ const Header = (props) => {
                     cursor: 'pointer'
                 }}/>
         </div>
-    }
+    )
 
     return (
         <header className={style.header}>

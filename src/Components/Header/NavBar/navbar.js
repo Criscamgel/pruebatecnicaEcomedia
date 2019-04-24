@@ -1,7 +1,8 @@
 import React from 'react';
 import Sidenav from 'react-simple-sidenav';
+import SidenavItems from './navbaritems';
 
-const SideNavigation = () => {
+const SideNavigation = (props) => {
     return(
         <div>
             <Sidenav
