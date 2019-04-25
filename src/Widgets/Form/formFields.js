@@ -38,10 +38,24 @@ const FormFields = (props) => {
     const validate = (element) => {
         let error = [true, '']
 
-
         if(element.validation.required){
             const valid = element.values.value.trim() !== '';
             const message = `${ !valid ? 'Este campo es obligatorio':''}`        
+
+        error = !valid ? [valid,message] : error
+
+        }
+        if(element.rango){
+            const valid = Number(element.values.value) >= 18 && Number(element.values.value) <= 100;
+            const message = `${ !valid ? 'La edad que ha diligenciado no esta dentro del rango permitido':''}`        
+
+        error = !valid ? [valid,message] : error
+
+        }
+
+        if(element.length){
+            const valid = element.values.value.length <= 10 && element.values.value.length >= 10;
+            const message = `${ !valid ? 'Número de celular no valido':''}`        
 
         error = !valid ? [valid,message] : error
 
@@ -79,7 +93,7 @@ const FormFields = (props) => {
                 )
                 break;
 
-            case ('select'):
+            /*case ('select'):
                 formTemplate = (
                     <div className={Style.element}>
                         <select
@@ -97,7 +111,7 @@ const FormFields = (props) => {
                         </select>
                     </div>
                     )    
-                    break;
+                    break;*/
         
                     default:
                     formTemplate = null;

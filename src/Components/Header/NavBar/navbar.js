@@ -9,6 +9,9 @@ const SideNavigation = (props) => {
             <Sidenav        
                 onHideNav = {props.onHideNav}
                 showNav= {props.showNav}
+                itemHoverStyle = {
+                    {backgroundColor: 'blue'}
+                }
                 navStyle={{
                     background: '#242424'
                 }}>

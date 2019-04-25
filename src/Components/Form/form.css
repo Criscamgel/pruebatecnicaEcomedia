@@ -27,6 +27,7 @@ input {
 }
 .btn{
     grid-column: 2 / 3;
+    margin-top: 10px;
 }
 
 .labelError {
@@ -34,4 +35,5 @@ input {
     color: #FF5722;
     font-weight: 600;
     margin-top: 27px;
+    font-size: 12px;
 }

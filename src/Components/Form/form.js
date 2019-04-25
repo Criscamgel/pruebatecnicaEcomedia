@@ -47,24 +47,21 @@ class FormJet extends Component {
                     required:true
                 },
                 valid:false,
-                touched:false,  
+                touched:false,
+                length:true,  
                 validationMessage:''            
             },
             age: {
                 values: {
                     value: ''
                 },
-                element: 'select',
-                type: 'select',
+                element: 'input',
+                type: 'number',
                 placeholder: 'Edad',
-                option:[
-                    {val:'1', text:'10-20'},
-                    {val:'1', text:'20-30'},
-                    {val:'1', text:'30+'}
-                ],
                 validation:{
                     required:true
                 },
+                rango:true,
                 valid:false,
                 touched:false,  
                 validationMessage:''            
