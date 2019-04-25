@@ -1,0 +1,29 @@
+@font-face{
+font-family: roboto;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: roboto;
+    background: #eeeeee;
+    color: #000;
+
+}
+
+input[placeholder] {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #3F51B5;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 0% 27%;
+    border-color: transparent;
+}

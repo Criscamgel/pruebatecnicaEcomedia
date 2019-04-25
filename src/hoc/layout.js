@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Components/Header/header';
+import FormJet from '../Components/Form/form';
 
 class Layout extends Component {
 
@@ -16,11 +17,15 @@ class Layout extends Component {
 
     render() {
         return (
+            <div>
             <Header
                 showNav={this.state.showNav}
                 onHideNav={() => this.toggleSidenav(false)}
                 onOpenNav={() => this.toggleSidenav(true)}
-            ></Header>
+            />
+            <FormJet/>
+            </div>
+            
         )
     }
 

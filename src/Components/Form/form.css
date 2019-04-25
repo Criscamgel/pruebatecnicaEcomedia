@@ -1,0 +1,30 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr;
+    grid-gap: 5px;
+}
+.element {
+    padding: 5px;
+    margin: 5px 5px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}   
+
+input {
+    font-size: 15px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.btnSubmit{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
+}
+.btn{
+    grid-column: 2 / 3;
+}

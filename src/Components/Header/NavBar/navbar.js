@@ -1,18 +1,19 @@
 import React from 'react';
 import Sidenav from 'react-simple-sidenav';
-import SidenavItems from './navbaritems';
+import NavBarItems from './navbaritems';
+import './navbar.css';
 
 const SideNavigation = (props) => {
     return(
         <div>
-            <Sidenav
-                onHidedeNav = {PaymentResponse.onHidenav}
+            <Sidenav        
+                onHideNav = {props.onHideNav}
                 showNav= {props.showNav}
                 navStyle={{
                     background: '#242424'
                 }}>
-                <SidenavItems/>
-                </Sidenav>
+                <NavBarItems/>
+            </Sidenav>
         </div>
     )
 }

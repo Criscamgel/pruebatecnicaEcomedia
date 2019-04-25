@@ -1,51 +1,30 @@
-import React from 'react';
-import Style from './sidenav.css';
+import React, {Component} from 'react';
+import Style from './navbar.css';
 import FontAwesome from 'react-fontawesome';
+import axios from 'axios';
 
-const NavBarItems = () => {
-    const items = [
+class NavBarItems  extends Component {
 
-        {
-            type: Style.option,
-            icon: 'home',
-            text: 'Home',
-            link: '/'
-        },
+    state = {
+        items: []
+    }
 
-        {
-            type: Style.option,
-            icon: 'file-text-o',
-            text: 'News',
-            link: '/'
-        },
+    componentWillMount = () => {
+        axios.get('http://localhost:3004/aviones')
+        .then(response => {
+             
+            this.setState({
+                items:response.data
+            })
+        })     
+    }
 
-        {
-            type: Style.option,
-            icon: 'play',
-            text: 'Videos',
-            link: '/videos'
-        },
+    showItems = () => {
 
-        {
-            type: Style.option,
-            icon: 'sing-in',
-            text: 'sing in',
-            link: '/sing-in'
-        },
-
-        {
-            type: Style.option,
-            icon: 'sing-out',
-            text: 'sing out',
-            link: '/sing-out'
-        }
-    ]
-
-    const showItems = () => {
-
-        return items.map((item, i) => {
+        let aviones = this.state.items
+        return aviones.map((item, i) => {
             return (
-                <div key={i} className={item.type}>
+                <div key={i} className={Style.option}>
                     <FontAwesome name={item.icon} />
                     {item.text}
                 </div>
@@ -54,11 +33,14 @@ const NavBarItems = () => {
 
 
     }
-    return (
-        <div>
-            {showItems()}
-        </div>
-    )
+
+    render(){
+        return (
+            <div className={Style.gridItem}>
+                {this.showItems()}
+            </div>
+        )
+    }
 }
 
 export default NavBarItems;
