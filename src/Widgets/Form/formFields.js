@@ -27,8 +27,39 @@ const FormFields = (props) => {
         const newState = props.formData;
         newState[id].values.value = event.target.value
 
+        let validData = validate(newState[id])
+        newState[id].valid = validData[0];
+        newState[id].validationMessage = validData[1];
+
         props.change(newState)
        
+    }
+
+    const validate = (element) => {
+        let error = [true, '']
+
+
+        if(element.validation.required){
+            const valid = element.values.value.trim() !== '';
+            const message = `${ !valid ? 'Este campo es obligatorio':''}`        
+
+        error = !valid ? [valid,message] : error
+
+        }
+
+        return error;
+
+    }
+
+    const showValidation = (data) =>{
+        let errorMessage = null;
+
+        if(data.validation && !data.valid){
+            errorMessage = (<span className={Style.labelError}>{data.validationMessage}</span>)
+        }
+
+        return errorMessage;
+
     }
 
     const renderTemplates = (data) => {
@@ -43,6 +74,7 @@ const FormFields = (props) => {
                         <input {...values} value={values.values.value} onChange={
                             (event) => changeHandler(event, data.id)
                         } />
+                        {showValidation(values)}
                     </div>
                 )
                 break;

@@ -28,3 +28,10 @@ input {
 .btn{
     grid-column: 2 / 3;
 }
+
+.labelError {
+    position: absolute;
+    color: #FF5722;
+    font-weight: 600;
+    margin-top: 27px;
+}

@@ -14,23 +14,41 @@ class FormJet extends Component {
                 },
                 element: 'input',
                 type: 'text',
-                placeholder: 'Nombre Completo'
-            },
+                placeholder: 'Nombre Completo',
+                validation:{
+                    required:true
+                },
+                valid:false,
+                touched:false,  
+                validationMessage:''
+            },        
             email: {
                 values: {
                     value: ''
                 },
                 element: 'input',
                 type: 'text',
-                placeholder: 'Email'
-            },
+                placeholder: 'Email',
+                validation:{
+                    required:true
+                },
+                valid:false,
+                touched:false,  
+                validationMessage:''
+            },            
             cel: {
                 values: {
                     value: ''
                 },
                 element: 'input',
                 type: 'number',
-                placeholder: 'Celular'
+                placeholder: 'Celular',
+                validation:{
+                    required:true
+                },
+                valid:false,
+                touched:false,  
+                validationMessage:''            
             },
             age: {
                 values: {
@@ -43,7 +61,13 @@ class FormJet extends Component {
                     {val:'1', text:'10-20'},
                     {val:'1', text:'20-30'},
                     {val:'1', text:'30+'}
-                ]
+                ],
+                validation:{
+                    required:true
+                },
+                valid:false,
+                touched:false,  
+                validationMessage:''            
             }
         }
     }
