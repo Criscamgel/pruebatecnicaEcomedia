@@ -5,8 +5,6 @@ import './navbar.css';
 
 const SideNavigation = (props) => {
 
-        console.log(props);
-
         return(        
         <div>
             <Sidenav        
@@ -19,7 +17,7 @@ const SideNavigation = (props) => {
                     background: '#242424'
                 }}
                 >
-                <NavBarItems/>
+                <NavBarItems handleSelectJet={props.handleSelectJet}/>
             </Sidenav>
         </div>
     )

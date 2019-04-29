@@ -36,11 +36,12 @@ button[disabled]{
 }
 
 .errorMesagge {
-    position: absolute;
+    grid-column: 2 / 3;
     color: #FF5722;
     font-weight: 600;
     margin-top: 27px;
     font-size: 12px;
+    text-align: center;
 }
 
 @media only screen and (min-width: 500px) {

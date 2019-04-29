@@ -1,5 +1,9 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/aviones', function(req, res){
     
@@ -17,15 +21,17 @@ app.get('/aviones', function(req, res){
 
 app.post('/form', function (req, res) {
 
+    const { inputNombre, inputEmail, inputCelular, inputEdad } = req.body
+
     let usuario = {
-        Nombre:'',
-        Email:'',
-        Celular:'',
-        Edad:''
+        Nombre: inputNombre,
+        Email: inputEmail,
+        Celular: inputCelular,
+        Edad: inputEdad
     }
 
     res.send(usuario);
-  });
+});
 
 app.listen(3004, () => {
     console.log("El servidor se inició en el puerto 3004")

@@ -11,6 +11,7 @@ class NavBarItems extends Component {
     }
 
     passJet = (i) =>{
+        this.props.handleSelectJet(this.state.items[i].text)
         this.setState({
             jet:this.state.items[i].text
         })
