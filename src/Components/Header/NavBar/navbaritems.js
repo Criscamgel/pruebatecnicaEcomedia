@@ -3,10 +3,18 @@ import Style from './navbar.css';
 import FontAwesome from 'react-fontawesome';
 import axios from 'axios';
 
-class NavBarItems  extends Component {
+class NavBarItems extends Component {
 
     state = {
-        items: []
+        items: [],
+        jet:''
+    }
+
+    passJet = (i) =>{
+        this.setState({
+            jet:this.state.items[i].text
+        })
+        return this.state.items[i].text;
     }
 
     componentWillMount = () => {
@@ -24,7 +32,7 @@ class NavBarItems  extends Component {
         let aviones = this.state.items
         return aviones.map((item, i) => {
             return (
-                <div key={i} className={Style.option}>
+                <div key={i} className={Style.option} onClick={() => this.passJet(i)} jet={() => this.passJet(i)}>
                     <FontAwesome name={item.icon} />
                     {item.text}
                 </div>

@@ -92,26 +92,6 @@ const FormFields = (props) => {
                     </div>
                 )
                 break;
-
-            /*case ('select'):
-                formTemplate = (
-                    <div className={Style.element}>
-                        <select
-                            value={values.values.value}
-                            name={values.element}
-                            onChange={
-                                (event) => changeHandler(event, data.id)
-                            }>
-                            {values.option.map((item, i) => (
-                                <option key={i} value={item.val}>
-                                    {item.text}
-                                </option>
-                            ))}
-                    
-                        </select>
-                    </div>
-                    )    
-                    break;*/
         
                     default:
                     formTemplate = null;

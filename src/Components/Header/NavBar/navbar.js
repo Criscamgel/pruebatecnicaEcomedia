@@ -4,7 +4,10 @@ import NavBarItems from './navbaritems';
 import './navbar.css';
 
 const SideNavigation = (props) => {
-    return(
+
+        console.log(props);
+
+        return(        
         <div>
             <Sidenav        
                 onHideNav = {props.onHideNav}
@@ -14,7 +17,8 @@ const SideNavigation = (props) => {
                 }
                 navStyle={{
                     background: '#242424'
-                }}>
+                }}
+                >
                 <NavBarItems/>
             </Sidenav>
         </div>

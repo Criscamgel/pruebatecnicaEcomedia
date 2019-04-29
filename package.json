@@ -47,6 +47,7 @@
     "react-dev-utils": "^9.0.0",
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
+    "react-responsive-modal": "^3.6.0",
     "react-simple-sidenav": "^1.0.1",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
@@ -128,5 +129,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "sweetalert2": "^8.9.0"
   }
 }

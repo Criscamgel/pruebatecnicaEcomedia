@@ -15,6 +15,18 @@ app.get('/aviones', function(req, res){
     res.send(aviones);
 })
 
+app.post('/form', function (req, res) {
+
+    let usuario = {
+        Nombre:'',
+        Email:'',
+        Celular:'',
+        Edad:''
+    }
+
+    res.send(usuario);
+  });
+
 app.listen(3004, () => {
     console.log("El servidor se inició en el puerto 3004")
 })

@@ -5,8 +5,8 @@
     grid-gap: 5px;
 }
 .element {
-    padding: 5px;
-    margin: 5px 5px;
+    padding: 12px !important;
+    margin: 5px 10px;
     display: flex;
     justify-content: center;
     justify-items: center;
@@ -25,15 +25,34 @@ input {
     grid-template-rows: 1fr;
     grid-gap: 5px;
 }
+
+button:disabled,
+button[disabled]{
+  background: #7f91f9;
+}
 .btn{
     grid-column: 2 / 3;
     margin-top: 10px;
 }
 
-.labelError {
+.errorMesagge {
     position: absolute;
     color: #FF5722;
     font-weight: 600;
     margin-top: 27px;
     font-size: 12px;
 }
+
+@media only screen and (min-width: 500px) {
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 5px;
+    }
+
+    .element {
+        grid-column: 2 / 3;
+    }
+  }
